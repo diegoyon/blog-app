@@ -1,24 +1,38 @@
-# README
+# Blog-app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> The Blog app is a classic example of a blog website. It is a fully functional website that shows the list of posts and empower readers to interact with them by adding comments and liking posts.
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+This repository includes files with plain SQL that can be used to recreate a database:
 
-* System dependencies
+- Git clone the repository.
+- Run `bundle install`
+- Run `rails s`
 
-* Configuration
+## Authors
 
-* Database creation
+👤 **Diego Yon**
 
-* Database initialization
+- GitHub: [@diegoyon](https://github.com/diegoyon)
+- Twitter: [@diegoyon](https://twitter.com/diegoyon)
+- LinkedIn: [Diego Yon](https://www.linkedin.com/in/diego-yon/)
 
-* How to run the test suite
+## 🤝 Contributing
 
-* Services (job queues, cache servers, search engines, etc.)
+Contributions, issues, and feature requests are welcome!
 
-* Deployment instructions
+Feel free to check the [issues page](../../issues/).
 
-* ...
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
+
