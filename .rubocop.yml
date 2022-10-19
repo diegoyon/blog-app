@@ -43,7 +43,7 @@ Style/DefWithParentheses:
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
 Layout/EndOfLine:
-  EnforcedStyle: lf
+  Enabled: False
 
 Layout/HashAlignment:
   EnforcedColonStyle: key
@@ -62,4 +62,3 @@ Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
   Enabled: false
-
