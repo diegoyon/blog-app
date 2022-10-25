@@ -4,11 +4,13 @@
 
 ## Getting Started
 
-This repository includes files with plain SQL that can be used to recreate a database:
+To make the project run locally on your computer, please follow these next steps:
 
 - Git clone the repository.
 - Run `bundle install`
 - Run `rails s`
+
+To run the unit tests type `rspec` on your console.
 
 ## Authors
 
@@ -35,4 +37,3 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MIT](./LICENSE) licensed.
-

@@ -53,6 +53,8 @@ gem 'dotenv-rails'
 
 gem 'ffi'
 
+gem 'rails-controller-testing'
+
 group :test, :development do
   gem 'rspec-rails', '~> 6.0.0'
 end
