@@ -1,0 +1,26 @@
+.author-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.author-card {
+  display: flex;
+  border: 1px solid black;
+  width: 50vw;
+  padding: 1rem;
+  gap: 1rem;
+  justify-content: space-around;
+  min-width: fit-content;
+}
+
+.author-card img {
+  height: 4rem;
+}
+
+/* .author-card p {
+  justify-self: flex-end;
+} */

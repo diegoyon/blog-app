@@ -13,3 +13,45 @@
  *= require_tree .
  *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'EB Garamond', serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+nav {
+  border-bottom: 1px solid gray;
+  padding: 1rem;
+}
+
+footer {
+  padding: 1rem;
+  background-color: #ff3c00;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  color: white;
+}

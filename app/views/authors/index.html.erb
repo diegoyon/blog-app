@@ -1,7 +1,14 @@
-<h1>HERE IS THE LIST OF AUTHORS</h1>
-
-<% @authors.each do |author| %>
-<p>ID: <%= author.id %></p>
-  <p>Name: <%= author.name %></p>
-  <p>Number of posts: <%= author.posts.length %></p>
-<% end %>
+<div class="author-list">
+  <% @authors.each do |author| %>
+    <%= link_to author_path(author) do %>
+      <div class="author-card">
+      
+        <img src="https://picsum.photos/200" />
+        <div class = "author-details">
+          <h2><%= author.name %></h2>
+          <p>Number of posts: <%= author.posts.length %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

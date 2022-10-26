@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <nav>
+      <ul>
+        <%= link_to root_path do %>
+        <li>HOME</li>
+        <% end %>
+      </ul>
+    </nav>
     <%= yield %>
+    <footer>BlogApp</footer>
   </body>
 </html>
