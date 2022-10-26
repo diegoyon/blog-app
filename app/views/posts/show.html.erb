@@ -1,5 +1,23 @@
-<h1>HERE IS A SINGLE POST FOR A GIVEN AUTHOR</h1>
+<div class="post">
 
-<% if @post %>
-  <p><%= @post.title %></p>
-<% end %>
+  <% if @author %>
+    <div class="author-data">
+      <img src='https://picsum.photos/200' />
+      <div>
+        <h2><%= @author.name %></h2>
+        <p>Number of posts: <%= @author.posts.length %></p>
+      </div>
+    </div>
+  <% end %>
+
+  <% if @post %>
+    <h2><%= @post.title %></h2>
+    <p><%= @post.text %></p>
+    <div class="comments">
+    <h3>Comments</h3>
+      <% @post.comments.each do |comment| %>
+        <p><%= comment.text %></p>
+      <% end %>
+    </div>
+  <% end %>
+</div>

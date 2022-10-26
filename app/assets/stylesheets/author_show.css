@@ -1,0 +1,23 @@
+.author-show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem;
+}
+
+.author-data {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.author-data img {
+  height: 4rem;
+}
+
+.author-recent-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

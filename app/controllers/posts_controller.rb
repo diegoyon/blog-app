@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.where(author_id: params[:author_id])
+    @author = Author.find(params[:author_id])
   end
 
   def show
+    @author = Author.find(params[:author_id])
     @post = Post.find_by(id: params[:id])
   end
 end

@@ -1,7 +1,24 @@
-<h1>HERE IS THE LIST OF POSTS FOR A GIVEN AUTHOR</h1>
-
-<% @posts.each do |post| %>
-<p>ID: <%= post.id %></p>
-  <p>Title: <%= post.title %></p>
-  <p>Author: <%= post.author.name %></p>
-<% end %>
+<div class="author-show">
+  <% if @author %>
+    <div class="author-data">
+      <img src='https://picsum.photos/200' />
+      <div>
+        <h2><%= @author.name %></h2>
+        <p>Number of posts: <%= @author.posts.length %></p>
+      </div>
+    </div>
+    <div class="author-recent-posts">
+      <% @author.posts.each do |post| %>
+        <%= link_to author_post_path(@author, post) do %>
+          <div class="post-card">
+            <p><%= post.title %></p>
+            <p><%= post.text %></p>
+            <p>Comments: <%= post.comments.length %></p>
+            <p>Likes: <%= post.likes.length %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    
+  <% end %>
+</div>
