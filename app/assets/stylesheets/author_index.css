@@ -14,7 +14,7 @@
   padding: 1rem;
   gap: 1rem;
   justify-content: space-around;
-  min-width: fit-content;
+  min-width: max-content;
 }
 
 .author-card img {
