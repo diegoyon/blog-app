@@ -6,4 +6,10 @@
   <%= form.label :text %>
   <%= form.text_field :text %><br><br>
   <%= form.submit "Submit" %>
+
+  <% if @post.errors.any? %>
+    <% @post.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+  <% end %>
 <% end %>
