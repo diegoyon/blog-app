@@ -20,9 +20,7 @@
         </div>
       <% end %>
     </div>
-    <%= link_to author_posts_path(@author) do %>
-      <button>See all posts</button>
-    <% end %>
-    
+    <%= link_to '<button type="button">See All Posts</button>'.html_safe, author_posts_path(@author) %>
+    <%= link_to '<button type="button">New Post</button>'.html_safe, new_author_post_path(@author) %>
   <% end %>
 </div>

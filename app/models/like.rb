@@ -4,6 +4,8 @@ class Like < ApplicationRecord
   belongs_to :author
   belongs_to :post
 
+  validates :author_id, uniqueness: { scope: :post_id }
+
   private
 
   def update_likes_counter

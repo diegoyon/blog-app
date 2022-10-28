@@ -1,0 +1,13 @@
+<h1>New Comment</h1><br>
+
+<%= form_with model: @comment, url: author_post_comments_path, method: :post do |form| %>
+  <%= form.label :text %>
+  <%= form.text_field :text %><br><br>
+  <%= form.submit "Submit" %>
+
+  <% if @comment.errors.any? %>
+    <% @comment.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+  <% end %>
+<% end %>

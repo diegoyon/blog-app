@@ -3,7 +3,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "authors#index"
-  resources :authors, only: [:index, :show] do
-    resources :posts, only: [:index, :show]
+  resources :authors do
+    resources :posts do
+      resources :comments
+      resources :likes, only: [:create, :destroy, :new]
+    end
   end
 end

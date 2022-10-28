@@ -7,6 +7,7 @@
         <p>Number of posts: <%= @author.posts.length %></p>
       </div>
     </div>
+    <%= notice %>
     <div class="author-recent-posts">
       <% @author.posts.each do |post| %>
         <%= link_to author_post_path(@author, post) do %>
@@ -17,6 +18,11 @@
             <p>Likes: <%= post.likes.length %></p>
           </div>
         <% end %>
+
+        <%= form_with model: @like, url: author_post_likes_path(@author, post), method: :post do |form| %>
+          <%= form.submit "Like" %>
+        <% end %>
+
       <% end %>
     </div>
     
