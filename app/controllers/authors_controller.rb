@@ -5,5 +5,6 @@ class AuthorsController < ApplicationController
 
   def show
     @author = Author.find_by(id: params[:id])
+    @like = Like.new
   end
 end

@@ -17,6 +17,9 @@
             <p>Likes: <%= post.likes.length %></p>
           </div>
         <% end %>
+
+        <%= link_to '<button type="button">New Like</button>'.html_safe, new_author_post_like_path(@author, post) %>
+
       <% end %>
     </div>
     
