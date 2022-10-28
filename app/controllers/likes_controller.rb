@@ -6,8 +6,6 @@ class LikesController < ApplicationController
       author_id: current_user.id
     )
     redirect_to author_posts_path(current_user)
-    if !@like.save
-      flash[:notice] = 'Already liked'
-    end
+    flash[:notice] = 'Already liked' unless @like.save
   end
 end
