@@ -1,9 +1,5 @@
 class LikesController < ApplicationController
 
-  def new
-    @like = Like.new
-  end
-
   def create
     @post = Post.find_by(id: params[:post_id])
     @like = Like.new(
@@ -11,9 +7,10 @@ class LikesController < ApplicationController
       author_id: current_user.id
     )
     if @like.save
-      redirect_to author_post_path(current_user, @post)
+      redirect_to author_posts_path(current_user)
     else
-      render :new
+      redirect_to author_posts_path(current_user)
+      flash[:notice] = "Already liked"
     end
   end
 end

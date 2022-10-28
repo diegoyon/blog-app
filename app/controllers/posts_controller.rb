@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
     @author = Author.find(params[:author_id])
+    @like = Like.new
   end
 
   def show
