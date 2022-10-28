@@ -19,5 +19,6 @@
         <p><%= comment.text %></p>
       <% end %>
     </div>
+    <%= link_to '<button type="button">New Comment</button>'.html_safe, new_author_post_comment_path(@author, @post) %>
   <% end %>
 </div>
