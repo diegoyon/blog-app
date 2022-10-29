@@ -14,17 +14,20 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(
-      title: params[:post][:title],
-      text: params[:post][:text],
-      comments_counter: 0,
-      likes_counter: 0,
-      author_id: current_user.id
-    )
+    @post = Post.new(post_params)
     if @post.save
       redirect_to author_posts_path(current_user)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
+  end
+
+  private
+
+  def post_params
+    params
+      .require(:post)
+      .permit(:title, :text)
+      .with_defaults(comments_counter: 0, likes_counter: 0, author_id: current_user.id)
   end
 end

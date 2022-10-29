@@ -1,8 +1,7 @@
 <div class="author-list">
   <% @authors.each do |author| %>
     <%= link_to author_path(author) do %>
-      <div class="author-card">
-      
+      <div class="author-card">    
         <img src="https://picsum.photos/200" />
         <div class = "author-details">
           <h2><%= author.name %></h2>
