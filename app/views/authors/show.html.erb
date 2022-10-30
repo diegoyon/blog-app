@@ -1,14 +1,17 @@
 <div class="author-show">
   <div class="author-data">
     <img src='https://picsum.photos/200' />
-    <div>
+    <div class="portrait"></div>
+    <div class="name-post">
       <h2><%= @author.name %></h2>
-      <p>Number of posts: <%= @author.posts.length %></p>
+      <p>Posts: <%= @author.posts.length %></p>
+    </div>
+    <div class="author-bio">
+      <h4>Bio</h4>
+      <p> <%= @author.bio %> </p>
     </div>
   </div>
-  <div class="author-bio">
-    <p> <%= @author.bio %> </p>
-  </div>
+  
   <div class="author-recent-posts">
     <% @author.three_recent_posts.each do |post| %>
       <div class="post-card">
@@ -18,7 +21,13 @@
         <p>Likes: <%= post.likes.length %></p>
       </div>
     <% end %>
+
+    <%= link_to '<button type="button">See All Posts</button>'.html_safe, author_posts_path(@author) %>
+    <%= link_to '<button type="button">New Post</button>'.html_safe, new_author_post_path(@author) %>
+
+    <%= render "posts/form" %>
   </div>
-  <%= link_to '<button type="button">See All Posts</button>'.html_safe, author_posts_path(@author) %>
-  <%= link_to '<button type="button">New Post</button>'.html_safe, new_author_post_path(@author) %>
+
+  
+
 </div>

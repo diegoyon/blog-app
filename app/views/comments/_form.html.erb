@@ -1,0 +1,7 @@
+<h3>New Comment</h3><br>
+
+<%= form_with model: [ @author, @post, @post.comments.build ] do |form| %>
+  <%= form.label :text %>
+  <%= form.text_field :text %><br><br>
+  <%= form.submit "Submit", class: 'btn' %>
+<% end %>

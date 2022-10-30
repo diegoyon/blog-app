@@ -1,7 +1,7 @@
 .author-list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -9,16 +9,27 @@
 
 .author-card {
   display: flex;
-  border: 1px solid black;
-  width: 50vw;
+  background-color: white;
+  border-radius: 5px;
+  width: 18rem;
   padding: 1rem;
   gap: 1rem;
   justify-content: space-around;
+  align-items: center;
   min-width: max-content;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .author-card img {
   height: 4rem;
+  border-radius: 50%;
+}
+
+.author-details {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* .author-card p {

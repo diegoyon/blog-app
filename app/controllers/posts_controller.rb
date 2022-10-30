@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
   def show
     @author = Author.find(params[:author_id])
-    @post = Post.find_by(id: params[:id])
+    @post = Post.find(params[:id])
   end
 
   def new
@@ -14,6 +14,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    @author = Author.find(params[:author_id])
     @post = Post.new(post_params)
     if @post.save
       redirect_to author_posts_path(current_user)

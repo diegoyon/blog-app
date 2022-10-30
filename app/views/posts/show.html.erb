@@ -1,24 +1,22 @@
 <div class="post">
 
-  <% if @author %>
-    <div class="author-data">
-      <img src='https://picsum.photos/200' />
-      <div>
-        <h2><%= @author.name %></h2>
-        <p>Number of posts: <%= @author.posts.length %></p>
-      </div>
+  <div class="author-data">
+    <img src='https://picsum.photos/200' />
+    <div>
+      <h2><%= @author.name %></h2>
+      <p>Number of posts: <%= @author.posts.length %></p>
     </div>
-  <% end %>
+  </div>
 
-  <% if @post %>
-    <h2><%= @post.title %></h2>
-    <p><%= @post.text %></p>
-    <div class="comments">
+  <h2><%= @post.title %></h2>
+  <p><%= @post.text %></p>
+  <div class="comments">
     <h3>Comments</h3>
-      <% @post.comments.each do |comment| %>
-        <p><%= comment.text %></p>
-      <% end %>
-    </div>
-    <%= link_to '<button type="button">New Comment</button>'.html_safe, new_author_post_comment_path(@author, @post) %>
-  <% end %>
+    <%= render @post.comments %>
+  </div>
+
+  <%= render "comments/form" %>
+
+  <%= link_to '<button type="button">New Comment</button>'.html_safe, new_author_post_comment_path(@author, @post) %>
+
 </div>
