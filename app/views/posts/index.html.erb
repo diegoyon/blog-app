@@ -1,43 +1,40 @@
 <div class="author-show">
+
   <div class="author-data">
     <img src='https://picsum.photos/200' />
-    <div>
+    <div class="portrait"></div>
+    <div class="name-post">
       <h2><%= @author.name %></h2>
-      <p>Number of posts: <%= @author.posts.length %></p>
+      <p>Posts: <%= @author.posts.length %></p>
+    </div>
+    <div class="author-bio">
+      <h4>Bio</h4>
+      <p> <%= @author.bio %> </p>
     </div>
   </div>
-  <%= notice %>
+
   <div class="author-posts">
-    <% @author.posts.each do |post| %>
+    <%= notice %>
+    <% @author.posts.order("created_at DESC").each do |post| %>
       <%= link_to author_post_path(@author, post) do %>
         <div class="post-card">
-          <p><%= post.title %></p>
+          <h3><%= post.title %></h3>
           <p><%= post.text %></p>
-          <p>Comments: <%= post.comments.length %></p>
-          <p>Likes: <%= post.likes.length %></p>
+          <div class="likes-comments">
+            <p><%= post.likes.length %> Likes</p>
+            <p><%= post.comments.length %> Comments</p>
+          </div>
         </div>
       <% end %>
 
       <%= form_with model: @like, url: author_post_likes_path(@author, post), method: :post do |form| %>
-        <%= form.submit "Like" %>
+        <%= form.submit "Like", class: "btn" %>
       <% end %>
 
     <% end %>
+    <%= render "posts/form" %>
   </div>
 
-  <h2>Add a post:</h2>
-  <%= form_with model: [ @author, @author.posts.build ] do |form| %>
-    <p>
-      <%= form.label :title %><br>
-      <%= form.text_field :title %>
-    </p>
-    <p>
-      <%= form.label :text %><br>
-      <%= form.text_area :text %>
-    </p>
-    <p>
-      <%= form.submit %>
-    </p>
-  <% end %>
+  
 
 </div>

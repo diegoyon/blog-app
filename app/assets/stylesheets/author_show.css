@@ -50,7 +50,8 @@
   font-size: 0.9rem;
 }
 
-.author-recent-posts {
+.author-recent-posts,
+.author-posts {
   display: flex;
   flex-direction: column;
   flex: 2;
@@ -62,4 +63,15 @@
   background-color: white;
   padding: 1rem;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.likes-comments {
+  display: flex;
+  margin-top: 1rem;
+  justify-content: space-around;
+  border-top: 1px solid #081f40;
+  padding-top: 1rem;
 }
