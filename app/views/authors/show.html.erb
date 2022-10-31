@@ -17,6 +17,7 @@
     <%= render "posts/form" %>
     <h3 class="recent-posts-title">Three most recent posts:</h3>
     <% @author.three_recent_posts.each do |post| %>
+      <%= link_to author_post_path(@author, post) do %>
       <div class="post-card">
         <h3><%= post.title %></h3>
         <p><%= post.text %></p>
@@ -25,6 +26,7 @@
           <p><%= post.comments.length %> Comments</p>
         </div>
       </div>
+      <% end %>
     <% end %>
 
     <%= link_to '<button type="button">See All Posts</button>'.html_safe, author_posts_path(@author) %>
