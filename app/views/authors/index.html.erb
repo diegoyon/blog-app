@@ -1,5 +1,5 @@
 <div class="author-list">
-  <% @authors.each do |author| %>
+  <% @authors.includes([:posts]).each do |author| %>
     <%= link_to author_path(author) do %>
       <div class="author-card">    
         <img src="https://picsum.photos/200" />

@@ -7,7 +7,7 @@
     <p><%= @post.comments.length %> Comments</p>
   </div>
   <div class="comments">
-    <%= render @post.comments %>
+    <%= render @post.comments.includes([:author]) %>
   </div>
 
   <%= render "comments/form" %>
