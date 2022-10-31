@@ -1,4 +1,7 @@
-<p>
-  <strong>Comment:</strong>
-  <%= comment.text %>
-</p>
+<div class="comment">
+  <img src="https://picsum.photos/200" />
+  <div class="author-comment">
+    <h4><%= comment.author.name %></h4>
+    <p><%= comment.text %></p>
+  </div>
+</div>

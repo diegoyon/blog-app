@@ -14,6 +14,7 @@
   </div>
 
   <div class="author-posts">
+    <%= render "posts/form" %>
     <%= notice %>
     <% @author.posts.order("created_at DESC").each do |post| %>
       <%= link_to author_post_path(@author, post) do %>
@@ -32,7 +33,7 @@
       <% end %>
 
     <% end %>
-    <%= render "posts/form" %>
+    
   </div>
 
   

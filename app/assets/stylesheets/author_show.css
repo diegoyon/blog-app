@@ -50,6 +50,10 @@
   font-size: 0.9rem;
 }
 
+.recent-posts-title {
+  margin-top: 2rem;
+}
+
 .author-recent-posts,
 .author-posts {
   display: flex;

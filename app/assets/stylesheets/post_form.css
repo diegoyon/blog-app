@@ -1,0 +1,26 @@
+.post-form {
+  background-color: white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: 5px;
+}
+
+.post-form .btn {
+  width: fit-content;
+  align-self: flex-end;
+}
+
+.post-form label {
+  display: none;
+}
+
+.post-input {
+  background-color: #f0f2f5;
+  border: none;
+  padding: 0.8rem;
+  width: 100%;
+  border-radius: 10px;
+}

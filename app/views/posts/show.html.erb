@@ -1,22 +1,17 @@
 <div class="post">
-
-  <div class="author-data">
-    <img src='https://picsum.photos/200' />
-    <div>
-      <h2><%= @author.name %></h2>
-      <p>Number of posts: <%= @author.posts.length %></p>
-    </div>
-  </div>
-
   <h2><%= @post.title %></h2>
-  <p><%= @post.text %></p>
+  <h5> by <%= @post.author.name %></h5>
+  <p class="post-text"><%= @post.text %></p>
+  <div class="likes-comments">
+    <p><%= @post.likes.length %> Likes</p>
+    <p><%= @post.comments.length %> Comments</p>
+  </div>
   <div class="comments">
-    <h3>Comments</h3>
     <%= render @post.comments %>
   </div>
 
   <%= render "comments/form" %>
 
-  <%= link_to '<button type="button">New Comment</button>'.html_safe, new_author_post_comment_path(@author, @post) %>
+  <%#= link_to '<button type="button">New Comment</button>'.html_safe, new_author_post_comment_path(@post.author, @post) %>
 
 </div>

@@ -1,7 +1,5 @@
-<h3>New Comment</h3><br>
-
-<%= form_with model: [ @author, @post, @post.comments.build ] do |form| %>
+<%= form_with model: [ @post.author, @post, @post.comments.build ], class: 'comment-form' do |form| %>
   <%= form.label :text %>
-  <%= form.text_field :text %><br><br>
-  <%= form.submit "Submit", class: 'btn' %>
+  <%= form.text_field :text, class: 'comment-input', placeholder: "Write a comment..." %>
+  <%= form.submit "Comment", class: 'btn' %>
 <% end %>
