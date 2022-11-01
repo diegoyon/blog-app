@@ -19,10 +19,18 @@ RSpec.describe 'Author index page', type: :feature do
       visit authors_path
       expect(page).to have_content(@author2.name)
     end
-    it 'assigns all users to @authors' do
-      visit authors_path
-      expect(assigns(:authors)).to eq(Author.all)
-    end
+    # it 'assigns all users to @authors' do
+    #   visit authors_path
+    #   expect(assigns(:authors)).to eq(Author.all)
+    # end
+    # it 'Checks if auhors present' do
+    #   visit authors_path
+    #   authors = Author.all.each do
+    #     Author.name
+    #   end
+    #   authors = page.all(Author.all.name)
+    #   expect(assigns(:authors)).to eq(Author.all)
+    # end
     it 'show author has image' do
       visit authors_path
       images = page.all('img')
@@ -36,7 +44,7 @@ RSpec.describe 'Author index page', type: :feature do
       visit authors_path
       click_on('Mumenya')
       expect(page).to have_content('New Post')
-      # expect(current_path).to eql(author_path(@author.id))
+      expect(current_path).to eql(author_path(@author1.id))
     end
   end
 end
