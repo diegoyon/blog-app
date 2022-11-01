@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Author show page', type: :system do
+RSpec.describe 'Author show page', type: :feature do
   before(:each) do
     @author1 = Author.create!(name: 'Mumenya',
                               photo: 'https://picsum.photos/200',
@@ -11,13 +11,13 @@ RSpec.describe 'Author show page', type: :system do
     Post.create!(author: @author2, title: 'Post 1', text: 'text Post 1', comments_counter: 0, likes_counter: 0)
     Post.create!(author: @author2, title: 'Post 2', text: 'text Post 2', comments_counter: 0, likes_counter: 0)
     Post.create!(author: @author2, title: 'Post 3', text: 'text Post 3', comments_counter: 0, likes_counter: 0)
-    
-                              visit author_path(@author2)
+
+    visit author_path(@author2)
   end
   describe 'show page' do
     it 'see the user\'s profile picture.' do
       visit author_path(@author2)
-      image = page('img')
+      image = page.all('img')
       expect(image.src).to eq('https://picsum.photos/200')
     end
     it 'see the user\'s username' do

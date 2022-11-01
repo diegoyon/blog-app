@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Author index page', type: :system do
+RSpec.describe 'Author index page', type: :feature do
   before(:each) do
     @author1 = Author.create!(name: 'Mumenya',
                               photo: 'https://picsum.photos/200',
@@ -13,14 +13,14 @@ RSpec.describe 'Author index page', type: :system do
   describe 'index page' do
     it 'shows the right content' do
       visit authors_path
-      expect(page).to have_content('Mumenya')
+      expect(page).to have_content(@author1.name)
     end
     it 'shows the right content' do
       visit authors_path
-      expect(page).to have_content('Diego')
+      expect(page).to have_content(@author2.name)
     end
     it 'assigns all users to @authors' do
-      get authors_path
+      visit authors_path
       expect(assigns(:authors)).to eq(Author.all)
     end
     it 'show author has image' do
