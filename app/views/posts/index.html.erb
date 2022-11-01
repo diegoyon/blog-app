@@ -25,6 +25,9 @@
             <p><%= post.likes.length %> Likes</p>
             <p><%= post.comments.length %> Comments</p>
           </div>
+          <% post.five_recent_comments.each do |comment| %>
+            <%= render comment %>
+          <% end %>
         </div>
       <% end %>
 
