@@ -11,37 +11,20 @@ RSpec.describe 'Author index page', type: :feature do
     visit authors_path
   end
   describe 'index page' do
-    it 'shows the right content' do
-      visit authors_path
+    it 'I can see the username of all other users.' do
       expect(page).to have_content(@author1.name)
     end
-    it 'shows the right content' do
-      visit authors_path
+    it 'I can see the username of all other users.' do
       expect(page).to have_content(@author2.name)
     end
-    # it 'assigns all users to @authors' do
-    #   visit authors_path
-    #   expect(assigns(:authors)).to eq(Author.all)
-    # end
-    # it 'Checks if auhors present' do
-    #   visit authors_path
-    #   authors = Author.all.each do
-    #     Author.name
-    #   end
-    #   authors = page.all(Author.all.name)
-    #   expect(assigns(:authors)).to eq(Author.all)
-    # end
-    it 'show author has image' do
-      visit authors_path
+    it 'I can see the profile picture for each user.' do
       images = page.all('img')
       expect(images.count).to eq(Author.all.count)
     end
-    it 'shows number of posts for user' do
-      visit authors_path
+    it 'I can see the number of posts each user has written.' do
       expect(page).to have_content('Number of posts: 0')
     end
-    it 'redicrects to author show page' do
-      visit authors_path
+    it 'When I click on a user, I am redirected to that user\'s show page.' do
       click_on('Mumenya')
       expect(page).to have_content('New Post')
       expect(current_path).to eql(author_path(@author1.id))
