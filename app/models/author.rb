@@ -7,6 +7,6 @@ class Author < ApplicationRecord
   validates :posts_counter, comparison: { greater_than_or_equal_to: 0 }, numericality: { only_integer: true }
 
   def three_recent_posts
-    posts.includes([:likes, :comments]).order("created_at DESC").first(3)
+    posts.includes(%i[likes comments]).order('created_at DESC').first(3)
   end
 end

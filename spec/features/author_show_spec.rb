@@ -15,20 +15,19 @@ RSpec.describe 'Author show page', type: :feature do
 
     visit author_path(@author2)
   end
-  
+
   describe 'show page' do
     it 'see the user\'s profile picture.' do
       images = page.all('img')
       expect(images.count).to eq(1)
     end
     it 'see the user\'s username' do
-       expect(page.find('h2', text: 'Diego')).to be_truthy
-       expect(page).to have_content('Diego')
+      expect(page.find('h2', text: 'Diego')).to be_truthy
+      expect(page).to have_content('Diego')
     end
     it 'see the number of posts the user has written.' do
       expect(page.body).to include('Posts: 4')
       expect(page).to have_content("Posts: #{@author2.posts.count}")
-
     end
     it 'see the user\'s bio' do
       expect(page.body).to have_content('Engineer from Guatemala')

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Posts", type: :feature do
+RSpec.feature 'Posts', type: :feature do
   before(:each) do
     @author1 = Author.create!(name: 'Mumenya',
                               photo: 'https://picsum.photos/200',
@@ -22,14 +22,14 @@ RSpec.feature "Posts", type: :feature do
 
     visit author_posts_path(@author2)
   end
-  
+
   describe 'post index page' do
     it 'see the user\'s profile picture.' do
       expect(page.body).to include('https://picsum.photos/200')
     end
     it 'see the user\'s username' do
-       expect(page.find('h2', text: 'Diego')).to be_truthy
-       expect(page).to have_content('Diego')
+      expect(page.find('h2', text: 'Diego')).to be_truthy
+      expect(page).to have_content('Diego')
     end
     it 'see the number of posts the user has written.' do
       expect(page.body).to include('Posts: 4')

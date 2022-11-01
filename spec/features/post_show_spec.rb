@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Posts", type: :feature do
+RSpec.feature 'Posts', type: :feature do
   before(:each) do
     @author1 = Author.create!(name: 'Mumenya',
                               photo: 'https://picsum.photos/200',
@@ -22,13 +22,13 @@ RSpec.feature "Posts", type: :feature do
 
     visit author_post_path(@author2, @post2)
   end
-  
+
   describe 'post show page' do
     it 'I can see the post\'s title.' do
       expect(page.body).to have_content('Post 2')
     end
     it 'I can see who wrote the post.' do
-       expect(page).to have_content('Diego')
+      expect(page).to have_content('Diego')
     end
 
     it 'I can see how many comments a post has.' do
@@ -46,7 +46,7 @@ RSpec.feature "Posts", type: :feature do
     it 'I can see the username of each commentor.' do
       expect(page).to have_content('Mumenya')
     end
-    
+
     it 'I can see the comment each commentor left.' do
       expect(page).to have_content('comment1')
       expect(page).to have_content('comment2')
