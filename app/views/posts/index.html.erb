@@ -16,7 +16,7 @@
   <div class="author-posts">
     <%= render "posts/form" %>
     <%= notice %>
-    <% @author.posts.order("created_at DESC").each do |post| %>
+    <% @author.posts.includes([:likes, :comments]).order("created_at DESC").each do |post| %>
       <%= link_to author_post_path(@author, post) do %>
         <div class="post-card">
           <h3><%= post.title %></h3>
@@ -25,6 +25,9 @@
             <p><%= post.likes.length %> Likes</p>
             <p><%= post.comments.length %> Comments</p>
           </div>
+          <% post.five_recent_comments.each do |comment| %>
+            <%= render comment %>
+          <% end %>
         </div>
       <% end %>
 
