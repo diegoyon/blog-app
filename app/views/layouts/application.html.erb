@@ -15,6 +15,7 @@
         <%= link_to root_path do %>
         <li>HOME</li>
         <% end %>
+        <%= button_to "Logout", destroy_author_session_path, method: :delete  %>
       </ul>
     </nav>
     <p class="notice"><%= notice %></p>
