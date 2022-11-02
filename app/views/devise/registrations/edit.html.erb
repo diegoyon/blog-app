@@ -23,11 +23,6 @@
     <%= f.text_field :bio %>
   </div>
 
-  <div class="field">
-    <%= f.label :posts_counter %><br />
-    <%= f.number_field :posts_counter %>
-  </div>
-
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
