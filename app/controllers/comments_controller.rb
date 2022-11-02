@@ -8,10 +8,10 @@ class CommentsController < ApplicationController
     @comment = Comment.new(
       text: params[:comment][:text],
       post_id: @post.id,
-      author_id: current_user.id
+      author_id: current_author.id
     )
     if @comment.save
-      redirect_to author_post_path(current_user, @post)
+      redirect_to author_post_path(current_author, @post)
     else
       render :new
     end

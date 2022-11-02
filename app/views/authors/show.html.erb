@@ -24,8 +24,11 @@
         <div class="likes-comments">
           <p><%= post.likes.length %> Likes</p>
           <p><%= post.comments.length %> Comments</p>
-        </div>
+        </div> 
       </div>
+      <% end %>
+      <%= form_with model: post, url: author_post_path(@author, post), method: :delete do |form| %>
+        <%= form.submit "Delete", class: "btn" %>
       <% end %>
     <% end %>
 

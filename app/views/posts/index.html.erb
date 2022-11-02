@@ -30,7 +30,9 @@
           <% end %>
         </div>
       <% end %>
-
+      <%= form_with model: post, url: author_post_path(@author, post), method: :delete do |form| %>
+        <%= form.submit "Delete", class: "btn" %>
+      <% end %>
       <%= form_with model: @like, url: author_post_likes_path(@author, post), method: :post do |form| %>
         <%= form.submit "Like", class: "btn" %>
       <% end %>
