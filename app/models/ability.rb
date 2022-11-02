@@ -7,10 +7,12 @@ class Ability
     can :read, Post, public: true
 
     return unless author.present?  # additional permissions for logged in authors (they can read their own posts)
-    can :read, Post, author: author
+    can :manage, Post, author: author
+    can :manage, Comment, author: author
+    can :manage, Like, author: author
 
-    return unless author.admin?  # additional permissions for administrators
-    can :read, Post
+    return unless author.role =='admin'  # additional permissions for administrators
+    can :manage, :all
     # Define abilities for the user here. For example:
     #
     #   return unless user.present?
