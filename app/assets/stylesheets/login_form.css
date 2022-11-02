@@ -1,0 +1,25 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  gap: 1rem;
+}
+
+.new_author {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.field input {
+  background-color: #f0f2f5;
+  border: none;
+  padding: 0.8rem;
+  width: 100%;
+  border-radius: 10px;
+}
