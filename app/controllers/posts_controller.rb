@@ -3,10 +3,12 @@ class PostsController < ApplicationController
   def index
     @author = Author.find(params[:author_id])
     @like = Like.new
+    render json: @author.posts
   end
 
   def show
     @post = Post.find(params[:id])
+    render json: @post.comments
   end
 
   def new
