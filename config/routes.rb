@@ -10,6 +10,8 @@ Rails.application.routes.draw do
       resources :likes, only: [:create, :destroy]
     end
   end
+
+  
   # API ROUTES
   namespace :api do # /api
     namespace :v1 do # /api/v1
@@ -20,5 +22,5 @@ Rails.application.routes.draw do
       end
     end
   end
-
+  post "/login", to: "authors#login"
 end
