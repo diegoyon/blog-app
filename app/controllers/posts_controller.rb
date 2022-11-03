@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  load_and_authorize_resource
+  # load_and_authorize_resource
   def index
     @author = Author.find(params[:author_id])
     @like = Like.new
