@@ -11,9 +11,18 @@ class CommentsController < ApplicationController
       author_id: current_author.id
     )
     if @comment.save
-      redirect_to author_post_path(current_author, @post)
+      redirect_back_or_to author_post_path(current_author, @post)
     else
       render :new
+    end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id]).destroy
+    @post = Post.find_by(id: params[:post_id])
+    respond_to do |format|
+      # format.html { redirect_to author_post_path(current_author, @post), notice: "Comment was successfully deleted." }
+      format.html { redirect_back_or_to author_post_path(current_author, @post), notice: "Comment was successfully deleted." }
     end
   end
 end
