@@ -5,16 +5,15 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find_by(id: params[:post_id])
-    @author = Author.find_by(id: params[:author_id])
     @comment = Comment.new(
       text: params[:comment][:text],
       post_id: @post.id,
-      author_id: @author.id
+      author_id: current_author.id
     )
     if @comment.save
-      render json: @comment, status: :created
+      redirect_back_or_to author_post_path(current_author, @post)
     else
-      render json: @comment.errors, status: :unprocessable_entity
+      render :new
     end
   end
 
