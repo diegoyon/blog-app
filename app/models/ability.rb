@@ -4,7 +4,7 @@ class Ability
   include CanCan::Ability
 
   def initialize(author)
-    can :read, Post, public: true
+    can :read, Post
 
     return unless author.present?  # additional permissions for logged in authors (they can read their own posts)
     can :manage, Post, author: author
