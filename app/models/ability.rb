@@ -1,17 +1,17 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
   def initialize(author)
     can :read, Post
 
-    return unless author.present?  # additional permissions for logged in authors (they can read their own posts)
+    return unless author.present? # additional permissions for logged in authors (they can read their own posts)
+
     can :manage, Post, author: author
     can :manage, Comment, author: author
     can :manage, Like, author: author
 
-    return unless author.role =='admin'  # additional permissions for administrators
+    return unless author.role == 'admin' # additional permissions for administrators
+
     can :manage, :all
     # Define abilities for the user here. For example:
     #

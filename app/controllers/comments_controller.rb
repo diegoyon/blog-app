@@ -21,8 +21,9 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id]).destroy
     @post = Post.find_by(id: params[:post_id])
     respond_to do |format|
-      # format.html { redirect_to author_post_path(current_author, @post), notice: "Comment was successfully deleted." }
-      format.html { redirect_back_or_to author_post_path(current_author, @post), notice: "Comment was successfully deleted." }
+      format.html do
+        redirect_back_or_to author_post_path(current_author, @post), notice: 'Comment was successfully deleted.'
+      end
     end
   end
 end
