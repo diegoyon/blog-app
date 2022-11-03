@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "authors#index"
+  post '/auth/login', to: 'authentication#login'
   resources :authors do
     resources :posts do
       resources :comments
