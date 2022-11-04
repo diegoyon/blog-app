@@ -91,3 +91,5 @@ group :test do
 end
 
 gem "doorkeeper", "~> 5.6"
+
+gem 'rswag'
