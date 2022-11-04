@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  use_doorkeeper
   devise_for :authors
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
+  
   # Defines the root path route ("/")
   root "authors#index"
+  
   resources :authors do
     resources :posts do
       resources :comments
@@ -22,5 +24,12 @@ Rails.application.routes.draw do
       end
     end
   end
-  post "/login", to: "authors#login"
+
+  scope :api do
+    scope :v1 do
+      use_doorkeeper do
+        skip_controllers :authorizations, :applications, :authorized_applications
+      end
+    end
+  end
 end
