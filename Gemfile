@@ -89,3 +89,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "doorkeeper", "~> 5.6"
