@@ -14,7 +14,7 @@
   </div>
   
   <div class="author-recent-posts">
-    <% if current_author == @author %>
+    <% if can? :create, @author.posts.build %>
       <%= render "posts/form" %>
     <% end %>
     <h3 class="recent-posts-title">Three most recent posts:</h3>
