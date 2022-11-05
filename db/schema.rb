@@ -16,7 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_04_052843) do
 
   create_table "authors", force: :cascade do |t|
     t.string "name"
-    t.text "photo"
+    t.text "photo", default: "https://www.charitytaxgroup.org.uk/wp-content/uploads/no-face.jpg"
     t.text "bio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
