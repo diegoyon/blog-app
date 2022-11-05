@@ -4,10 +4,10 @@ RSpec.describe 'Author index page', type: :feature do
   before(:each) do
     @author1 = Author.create!(name: 'Mumenya',
                               photo: 'https://picsum.photos/200',
-                              bio: 'Pilot from Venus', posts_counter: 0)
+                              bio: 'Pilot from Venus')
     @author2 = Author.create!(name: 'Diego',
                               photo: 'https://picsum.photos/200',
-                              bio: 'Engineer from Guatemala', posts_counter: 0)
+                              bio: 'Engineer from Guatemala')
     visit authors_path
   end
   describe 'index page' do

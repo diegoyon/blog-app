@@ -1,8 +1,8 @@
 require_relative '../rails_helper'
 
 RSpec.describe Post, type: :post do
-  before { @author = Author.new(name: 'diego', posts_counter: 0) }
-  subject { Post.create(title: 'New Post', author: @author, comments_counter: 0, likes_counter: 0) }
+  before { @author = Author.new(name: 'diego') }
+  subject { Post.create(title: 'New Post', author: @author) }
 
   it 'title should be present' do
     subject.title = nil
@@ -32,8 +32,8 @@ RSpec.describe Post, type: :post do
   end
 
   it 'update_posts_counter method' do
-    author = Author.create!(name: 'diego', posts_counter: 0)
-    Post.create!(author:, title: 'the post', comments_counter: 0, likes_counter: 0)
+    author = Author.create!(name: 'diego')
+    Post.create!(author:, title: 'the post')
     lastauthor = Author.last
     expect(lastauthor.posts_counter).to eq 1
   end

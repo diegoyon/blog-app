@@ -4,14 +4,14 @@ RSpec.describe 'Author show page', type: :feature do
   before(:each) do
     @author1 = Author.create!(name: 'Mumenya',
                               photo: 'https://picsum.photos/200',
-                              bio: 'Pilot from Venus', posts_counter: 0)
+                              bio: 'Pilot from Venus')
     @author2 = Author.create!(name: 'Diego',
                               photo: 'https://picsum.photos/200',
-                              bio: 'Engineer from Guatemala', posts_counter: 0)
-    @post1 = Post.create!(author: @author2, title: 'Post 1', text: 'text Post 1', comments_counter: 0, likes_counter: 0)
-    @post2 = Post.create!(author: @author2, title: 'Post 2', text: 'text Post 2', comments_counter: 0, likes_counter: 0)
-    @post3 = Post.create!(author: @author2, title: 'Post 3', text: 'text Post 3', comments_counter: 0, likes_counter: 0)
-    @post4 = Post.create!(author: @author2, title: 'Post 4', text: 'text Post 4', comments_counter: 0, likes_counter: 0)
+                              bio: 'Engineer from Guatemala')
+    @post1 = Post.create!(author: @author2, title: 'Post 1', text: 'text Post 1')
+    @post2 = Post.create!(author: @author2, title: 'Post 2', text: 'text Post 2')
+    @post3 = Post.create!(author: @author2, title: 'Post 3', text: 'text Post 3')
+    @post4 = Post.create!(author: @author2, title: 'Post 4', text: 'text Post 4')
 
     visit author_path(@author2)
   end

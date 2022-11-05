@@ -32,6 +32,6 @@ class PostsController < ApplicationController
     params
       .require(:post)
       .permit(:title, :text)
-      .with_defaults(comments_counter: 0, likes_counter: 0, author_id: current_author.id)
+      .with_defaults(author_id: current_author.id)
   end
 end
