@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
+
   def index
     @author = Author.find(params[:author_id])
-    @like = Like.new
   end
 
   def show
@@ -10,9 +10,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @author = Author.find(params[:author_id])
-    @post = Post.new(post_params)
-    if @post.save
+    post = Post.new(post_params)
+    if post.save
       redirect_back_or_to author_path(current_author)
     else
       render :new, status: :unprocessable_entity
@@ -20,7 +19,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id]).destroy
+    Post.find(params[:id]).destroy
     respond_to do |format|
       format.html { redirect_back_or_to author_path(current_author), notice: 'Post was successfully deleted.' }
     end
