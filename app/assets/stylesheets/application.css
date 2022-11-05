@@ -62,6 +62,12 @@ nav ul {
   margin: 0 1rem;
 }
 
+.right-nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
 footer {
   padding: 1rem;
   background-color: #081f40;

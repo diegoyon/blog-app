@@ -12,12 +12,17 @@
   <body>
     <nav>
       <ul>
+        <li>
         <%= link_to authors_path do %>
-        <li>HOME</li>
+          HOME
         <% end %>
-        <% if author_signed_in? %>
-          <%= button_to "Logout", destroy_author_session_path, method: :delete  %>
-        <% end %>
+        </li>
+        <li class="right-nav">
+          <% if author_signed_in? %>
+            <%= link_to "Edit profile", edit_author_registration_path %>
+            <%= button_to "Logout", destroy_author_session_path, method: :delete  %>
+          <% end %>
+        </li>
       </ul>
     </nav>
     <p class="notice"><%= notice %></p>
