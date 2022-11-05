@@ -6,8 +6,15 @@
     <p><%= post.comments.length %> Comments</p>
   </div>
   <div class="buttons-likes-comments">
-    <%= form_with model: @like, url: author_post_likes_path(@author, post), method: :post do |form| %>
-      <%= form.submit "Like", class: "like" %>
+    <% like = current_author.likes.find_by(post: post) %>
+    <% if like.nil? %>
+      <%= form_with model: @like, url: author_post_likes_path(@author, post), method: :post do |form| %>
+        <%= form.submit "Like", class: "like" %>
+      <% end %>
+    <% else %>
+      <%= form_with model: @like, url: author_post_like_path(@author, post, like), method: :delete do |form| %>
+        <%= form.submit "Unlike", class: "like" %>
+      <% end %>
     <% end %>
     <p>Comment</p>
   </div>

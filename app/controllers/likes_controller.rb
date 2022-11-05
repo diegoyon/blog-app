@@ -8,4 +8,9 @@ class LikesController < ApplicationController
     redirect_back_or_to author_posts_path(current_author)
     flash[:notice] = 'Already liked' unless like.save
   end
+
+  def destroy
+    current_author.likes.find(params[:id]).destroy
+    redirect_back_or_to author_posts_path(current_author)
+  end
 end
