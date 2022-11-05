@@ -22,9 +22,6 @@
       <%= link_to author_post_path(@author, post) do %>
         <%= render post %>
       <% end %>
-      <%= form_with model: @like, url: author_post_likes_path(@author, post), method: :post do |form| %>
-        <%= form.submit "Like", class: "btn" %>
-      <% end %>
     <% end %> 
   </div>
 </div>

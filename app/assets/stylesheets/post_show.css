@@ -41,6 +41,17 @@
   align-items: center;
 }
 
+.comment .btn {
+  color: #a1a1a1;
+  background-color: white;
+  border: none;
+  padding: 0;
+}
+
+.comment .btn:hover {
+  color: #081f40;
+}
+
 .author-comment {
   background-color: #f0f2f5;
   padding: 0.5rem;

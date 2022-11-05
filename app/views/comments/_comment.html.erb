@@ -6,7 +6,7 @@
   </div>
   <% if can? :destroy, comment %>
     <%= form_with model: comment, url: author_post_comment_path(comment.author, comment.post, comment), method: :delete do |form| %>
-      <%= form.submit "Delete", class: "btn" %>
+      <%= form.submit "x", class: "btn" %>
     <% end %>
   <% end %>
 </div>
