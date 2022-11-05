@@ -14,7 +14,9 @@
   </div>
 
   <div class="author-posts">
-    <%= render "posts/form" %>
+    <% if current_author == @author %>
+      <%= render "posts/form" %>
+    <% end %>
     <%= notice %>
     <% @author.posts.includes([:likes, :comments]).order("created_at DESC").each do |post| %>
       <%= link_to author_post_path(@author, post) do %>

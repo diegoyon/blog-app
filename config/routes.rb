@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   devise_for :authors
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   
-  # Defines the root path route ("/")
-  root "authors#index"
+  # Sets the root page to be the login of devise
+  devise_scope :author do
+    root "devise/sessions#new"
+  end
   
   resources :authors do
     resources :posts do

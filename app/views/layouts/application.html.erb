@@ -12,10 +12,12 @@
   <body>
     <nav>
       <ul>
-        <%= link_to root_path do %>
+        <%= link_to authors_path do %>
         <li>HOME</li>
         <% end %>
-        <%= button_to "Logout", destroy_author_session_path, method: :delete  %>
+        <% if author_signed_in? %>
+          <%= button_to "Logout", destroy_author_session_path, method: :delete  %>
+        <% end %>
       </ul>
     </nav>
     <p class="notice"><%= notice %></p>

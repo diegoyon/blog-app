@@ -14,7 +14,9 @@
   </div>
   
   <div class="author-recent-posts">
-    <%= render "posts/form" %>
+    <% if current_author == @author %>
+      <%= render "posts/form" %>
+    <% end %>
     <h3 class="recent-posts-title">Three most recent posts:</h3>
     <% @author.three_recent_posts.each do |post| %>
       <%= link_to author_post_path(@author, post) do %>
