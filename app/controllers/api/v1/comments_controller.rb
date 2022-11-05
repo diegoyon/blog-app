@@ -7,7 +7,7 @@ class Api::V1::CommentsController < Api::V1::ApplicationController
       render json: comment.errors, status: :unprocessable_entity
     end
   end
-  
+
   private
 
   def comment_params

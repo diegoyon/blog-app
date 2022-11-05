@@ -1,7 +1,7 @@
 require_relative '../rails_helper'
 
 RSpec.describe Author, type: :author do
-  subject { Author.new(name: 'diego'}
+  subject { Author.new(name: 'diego') }
 
   before { subject.save }
 

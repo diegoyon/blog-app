@@ -3,8 +3,8 @@ class Api::V1::ApplicationController < ActionController::API
 
   respond_to :json
 
-  def doorkeeper_unauthorized_render_options(error: nil)
-    { json: { error: "unauthorized access" } }
+  def doorkeeper_unauthorized_render_options(*)
+    { json: { error: 'unauthorized access' } }
   end
 
   private
