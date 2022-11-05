@@ -10,7 +10,7 @@ class Ability
     can :manage, Comment, author: author
     can :manage, Like, author: author
 
-    return unless author.role == 'admin' # additional permissions for administrators
+    return unless author.role == 1 # additional permissions for administrators
 
     can :manage, :all
     # Define abilities for the user here. For example:
