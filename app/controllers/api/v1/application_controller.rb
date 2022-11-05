@@ -3,6 +3,10 @@ class Api::V1::ApplicationController < ActionController::API
 
   respond_to :json
 
+  def doorkeeper_unauthorized_render_options(error: nil)
+    { json: { error: "unauthorized access" } }
+  end
+
   private
 
   # helper method to access the current user from the token
