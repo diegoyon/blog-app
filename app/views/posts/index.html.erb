@@ -17,34 +17,14 @@
     <% if can? :create, @author.posts.build %>
       <%= render "posts/form" %>
     <% end %>
-    <%= notice %>
+    <h3 class="all-posts-title">All posts:</h3>
     <% @author.posts.includes([:likes, :comments]).order("created_at DESC").each do |post| %>
       <%= link_to author_post_path(@author, post) do %>
-        <div class="post-card">
-          <h3><%= post.title %></h3>
-          <p><%= post.text %></p>
-          <div class="likes-comments">
-            <p><%= post.likes.length %> Likes</p>
-            <p><%= post.comments.length %> Comments</p>
-          </div>
-          <% post.five_recent_comments.each do |comment| %>
-            <%= render comment %>
-          <% end %>
-        </div>
-      <% end %>
-      <% if can? :destroy, post %>
-        <%= form_with model: post, url: author_post_path(@author, post), method: :delete do |form| %>
-          <%= form.submit "Delete", class: "btn" %>
-        <% end %>
+        <%= render post %>
       <% end %>
       <%= form_with model: @like, url: author_post_likes_path(@author, post), method: :post do |form| %>
         <%= form.submit "Like", class: "btn" %>
       <% end %>
-
-    <% end %>
-    
+    <% end %> 
   </div>
-
-  
-
 </div>

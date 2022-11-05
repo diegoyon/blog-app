@@ -1,0 +1,25 @@
+<div class="post-card">
+  <h3><%= post.title %></h3>
+  <p><%= post.text %></p>
+  <div class="likes-comments">
+    <p><%= post.likes.length %> Likes</p>
+    <p><%= post.comments.length %> Comments</p>
+  </div>
+  <div class="buttons-likes-comments">
+    <%= form_with model: @like, url: author_post_likes_path(@author, post), method: :post do |form| %>
+      <%= form.submit "Like", class: "like" %>
+    <% end %>
+    <p>Comment</p>
+  </div>
+  <div class="comments-section">
+    <% post.five_recent_comments.each do |comment| %>
+      <%= render comment %>
+    <% end %>
+  </div>
+  <% if can? :destroy, post %>
+    <%= form_with model: post, url: author_post_path(post.author, post), method: :delete do |form| %>
+      <%= form.submit "X", class: "btn delete-post" %>
+    <% end %>
+  <% end %>
+  
+</div>

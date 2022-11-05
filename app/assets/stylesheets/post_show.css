@@ -29,6 +29,12 @@
   gap: 1rem;
 }
 
+.comments-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .comment {
   display: flex;
   gap: 1rem;
@@ -61,4 +67,33 @@
   border-radius: 10px;
   padding: 1rem;
   flex: 1;
+}
+
+.buttons-likes-comments {
+  display: flex;
+  text-align: center;
+  font-weight: 600;
+  color: #7a7a7a;
+  border-top: 1px solid #a1a1a1;
+  border-bottom: 1px solid #a1a1a1;
+}
+
+.buttons-likes-comments form,
+.buttons-likes-comments p {
+  flex: 1;
+}
+
+.buttons-likes-comments p,
+.buttons-likes-comments input {
+  padding: 0.5rem 0;
+}
+
+.buttons-likes-comments input {
+  border: none;
+  font-size: 1rem;
+  width: 100%;
+  font-weight: 600;
+  color: #7a7a7a;
+  background-color: white;
+  cursor: pointer;
 }

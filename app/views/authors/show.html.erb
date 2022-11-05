@@ -20,28 +20,9 @@
     <h3 class="recent-posts-title">Three most recent posts:</h3>
     <% @author.three_recent_posts.each do |post| %>
       <%= link_to author_post_path(@author, post) do %>
-      <div class="post-card">
-        <h3><%= post.title %></h3>
-        <p><%= post.text %></p>
-        <div class="likes-comments">
-          <p><%= post.likes.length %> Likes</p>
-          <p><%= post.comments.length %> Comments</p>
-        </div> 
-      </div>
-      <% end %>
-      <% if can? :destroy, post %>
-        <%= form_with model: post, url: author_post_path(@author, post), method: :delete do |form| %>
-          <%= form.submit "Delete", class: "btn" %>
-        <% end %>
+        <% render post %>
       <% end %>
     <% end %>
-
     <%= link_to '<button type="button">See All Posts</button>'.html_safe, author_posts_path(@author) %>
-    <%#= link_to '<button type="button">New Post</button>'.html_safe, new_author_post_path(@author) %>
-
-    
   </div>
-
-  
-
 </div>

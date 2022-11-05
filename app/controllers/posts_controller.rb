@@ -9,10 +9,6 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def new
-    @post = Post.new
-  end
-
   def create
     @author = Author.find(params[:author_id])
     @post = Post.new(post_params)

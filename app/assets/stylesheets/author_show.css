@@ -50,10 +50,6 @@
   font-size: 0.9rem;
 }
 
-.recent-posts-title {
-  margin-top: 2rem;
-}
-
 .author-recent-posts,
 .author-posts {
   display: flex;
@@ -65,17 +61,35 @@
 .post-card {
   border-radius: 5px;
   background-color: white;
-  padding: 1rem;
+  padding: 1rem 1rem 0 1rem;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  position: relative;
+}
+
+.post-card .delete-post {
+  /* padding: 0.2rem 0.32rem; */
+  position: absolute;
+  top: 0.3rem;
+  right: 0.3rem;
+  /* border-radius: 50%; */
+  background-color: white;
+  color: #a1a1a1;
+  border: none;
+  font-size: 0.7rem;
+}
+
+.post-card .delete-post:hover {
+  color: #081f40;
 }
 
 .likes-comments {
   display: flex;
   margin-top: 1rem;
-  justify-content: space-around;
-  border-top: 1px solid #081f40;
-  padding-top: 1rem;
+  justify-content: space-between;
+  color: #a1a1a1;
+  padding: 0.6rem 0 0 0;
+  font-size: 0.8rem;
 }
