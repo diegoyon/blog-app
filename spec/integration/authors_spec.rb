@@ -2,9 +2,7 @@
 require 'swagger_helper'
 
 describe 'Authors API' do
-
   path '/authors' do
-
     # post 'Creates a blog' do
     #   tags 'Blogs'
     #   consumes 'application/json'
@@ -30,7 +28,6 @@ describe 'Authors API' do
   end
 
   path '/authors/{id}' do
-
     get 'Retrieves an author' do
       tags 'Author'
       produces 'application/json', 'application/xml'
@@ -39,13 +36,13 @@ describe 'Authors API' do
 
       response '200', 'author found' do
         schema type: :object,
-          properties: {
-            id: { type: :integer },
-            name: { type: :string },
-            bio: { type: :string },
-            photo: { type: :string }
-          },
-          required: [ 'id', 'name' ]
+               properties: {
+                 id: { type: :integer },
+                 name: { type: :string },
+                 bio: { type: :string },
+                 photo: { type: :string }
+               },
+               required: %w[id name]
 
         let(:id) { Author.create(name: 'Diego').id }
         run_test!
@@ -57,7 +54,7 @@ describe 'Authors API' do
       end
 
       response '406', 'unsupported accept header' do
-        let(:'Accept') { 'application/foo' }
+        let(:Accept) { 'application/foo' }
         run_test!
       end
     end

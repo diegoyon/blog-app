@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_author!
-  #protect_from_forgery with: :null_session
+  # protect_from_forgery with: :null_session
 
-  def after_sign_in_path_for(author)
+  def after_sign_in_path_for(_author)
     authors_path
   end
 
